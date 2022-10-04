@@ -34,19 +34,20 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `ItemVolumeUnit`                  varchar(3) DEFAULT NULL,
     `ItemIsBillingRelevant`           varchar(1) DEFAULT NULL,
     `LastChangeDate`                  varchar(80) DEFAULT NULL,
-    `Product`                         varchar(40) DEFAULT NULL,
-    `ProductByCustomer`               varchar(35) DEFAULT NULL,
-    `ProductIsBatchManaged`           varchar(1) DEFAULT NULL,
-    `OrderID`                         varchar(10) DEFAULT NULL,
-    `OrderItem`                       varchar(6) DEFAULT NULL,
+    `Product`                         varchar(40) DEFAULT NULL,  --名称変更
+    `ProductByCustomer`               varchar(40) DEFAULT NULL,  --名称変更
+    `ProductIsBatchManaged`           varchar(1) DEFAULT NULL,   --名称変更
+    `OrderID`                         varchar(10) DEFAULT NULL,  --名称変更
+    `OrderItem`                       varchar(6) DEFAULT NULL,   --名称変更
     `OriginalDeliveryQuantity`        varchar(13) DEFAULT NULL,
     `ProductAvailabilityDate`         varchar(80) DEFAULT NULL,
+    `Project`                         varchar(24) DEFAULT NULL,  --新規追加
     `ProfitCenter`                    varchar(10) DEFAULT NULL,
     `ReferenceDocument`               varchar(10) DEFAULT NULL,  --新規追加
     `ReferenceDocumentItem`           varchar(6) DEFAULT NULL,   --新規追加
     `BatchValidityStartDate`          varchar(80) DEFAULT NULL,  --新規追加
     `BatchValidityEndDate`            varchar(80) DEFAULT NULL,  --新規追加
-    `StockType`                       varchar(1) DEFAULT NULL,
+    `StockType`                       varchar(2) DEFAULT NULL,
     PRIMARY KEY (`BusinessPartner`, `DeliveryDocument`, `DeliveryDocumentItem`),
     CONSTRAINT `DataPlatformDeliveryDocumentItemData_fk` FOREIGN KEY (`DeliveryDocument`) REFERENCES `data_platform_delivery_document_header_data` (`DeliveryDocument`)
 ) ENGINE = InnoDB
