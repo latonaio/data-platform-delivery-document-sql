@@ -1,9 +1,9 @@
 CREATE TABLE `data_platform_delivery_document_partner_address_data`
 (
-    `BusinessPartner`         varchar(10) NOT NULL,      --新規追加
-    `DeliveryDocument`        varchar(10) NOT NULL,      --新規追加
-    `AddressID`               varchar(10) NOT NULL,
-    `BusinessPartnerName`     varchar(81) DEFAULT NULL,  --名称変更
+    `BusinessPartner`         int(10) NOT NULL,      --新規追加
+    `DeliveryDocument`        int(10) NOT NULL,      --新規追加
+    `AddressID`               int(10) NOT NULL,
+    `BusinessPartnerName`     varchar(100) DEFAULT NULL,  --名称変更
     `Country`                 varchar(3) DEFAULT NULL,
     `Region`                  varchar(3) DEFAULT NULL,
     `District`                varchar(6) DEFAULT NULL,   --新規追加
