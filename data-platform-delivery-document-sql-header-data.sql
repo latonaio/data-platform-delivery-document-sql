@@ -29,7 +29,7 @@ CREATE TABLE `data_platform_deliintvery_document_header_data`
     `HeaderVolume`                   varchar(13) DEFAULT NULL,
     `HeaderVolumeUnit`               varchar(3) DEFAULT NULL,
     `HeaderWeightUnit`               varchar(3) DEFAULT NULL,
-    `IncotermsClassification`        varchar(3) DEFAULT NULL,
+    `Incoterms`                      varchar(3) DEFAULT NULL,  -- 名称変更
     `IsExportDelivery`               tinyint(1) DEFAULT NULL,
     `LastChangeDate`                 varchar(80) DEFAULT NULL,
     `IssuingPlant`                   varchar(4) DEFAULT NULL,  -- 新規追加

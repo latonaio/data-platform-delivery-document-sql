@@ -49,6 +49,7 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `BatchValidityEndDate`            varchar(80) DEFAULT NULL,  -- 新規追加
     `StockType`                       varchar(2) DEFAULT NULL,
     `TaxCode`                         varchar(2) DEFAULT NULL,   -- 新規追加
+    `CountryOfOrigin`                 varchar(3) DEFAULT NULL,   -- 新規追加
     PRIMARY KEY (`BusinessPartner`, `DeliveryDocument`, `DeliveryDocumentItem`),
     CONSTRAINT `DataPlatformDeliveryDocumentItemData_fk` FOREIGN KEY (`BusinessPartner`, `DeliveryDocument`) REFERENCES `data_platform_delivery_document_item_data` (`BusinessPartner`, `DeliveryDocument`)
 ) ENGINE = InnoDB
