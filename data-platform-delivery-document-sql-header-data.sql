@@ -1,13 +1,18 @@
-CREATE TABLE `data_platform_deliintvery_document_header_data`
+CREATE TABLE `data_platform_delivery_document_header_data`
 (
     `BusinessPartner`                int(10) NOT NULL,         -- 新規追加
     `DeliveryDocument`               int(10) NOT NULL,
     `OrderID`                        int(10) DEFAULT NULL,     -- 名称変更
     `OrderType`                      varchar(3) DEFAULT NULL,  -- 新規追加
+    `ContractType`                   varchar(4) DEFAULT NULL,  -- 新規追加
+    `OrderValidityStartDate`         varchar(80) DEFAULT NULL, -- 新規追加
+    `OrderValidityEndDate`           varchar(80) DEFAULT NULL, -- 新規追加
+    `InvoiceScheduleStartDate`       varchar(80) DEFAULT NULL, -- 新規追加
+    `InvoiceScheduleEndDate`         varchar(80) DEFAULT NULL, -- 新規追加
     `IssuingLocationTimeZone`        varchar(3) DEFAULT NULL,  -- 新規追加
     `ReceivingLocationTimeZone`      varchar(3) DEFAULT NULL,  -- 新規追加
     `DocumentDate`                   varchar(80) DEFAULT NULL,
-    `PlannedGIOrGRDate`              varchar(80) DEFAULT NULL,  -- 名称変更
+    `PlannedGIOrGRDate`              varchar(80) DEFAULT NULL, -- 名称変更
     `ActualGoodsMovementDate`        varchar(80) DEFAULT NULL,
     `ActualGoodsMovementTime`        varchar(80) DEFAULT NULL,
     `BillingDocumentDate`            varchar(80) DEFAULT NULL,

@@ -39,6 +39,12 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `ProductIsBatchManaged`           varchar(1) DEFAULT NULL,   -- 名称変更
     `OrderID`                         int(10) DEFAULT NULL,      -- 名称変更
     `OrderItem`                       int(6) DEFAULT NULL,       -- 名称変更
+    `OrderType`                       varchar(3) DEFAULT NULL,   -- 新規追加
+    `ContractType`                    varchar(4) DEFAULT NULL,   -- 新規追加
+    `OrderValidityStartDate`          varchar(80) DEFAULT NULL,  -- 新規追加
+    `OrderValidityEndDate`            varchar(80) DEFAULT NULL,  -- 新規追加
+    `InvoiceScheduleStartDate`        varchar(80) DEFAULT NULL,  -- 新規追加
+    `InvoiceScheduleEndDate`          varchar(80) DEFAULT NULL,  -- 新規追加
     `OriginalDeliveryQuantity`        varchar(13) DEFAULT NULL,
     `ProductAvailabilityDate`         varchar(80) DEFAULT NULL,
     `Project`                         varchar(24) DEFAULT NULL,  -- 新規追加
