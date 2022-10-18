@@ -44,9 +44,10 @@ CREATE TABLE `data_platform_delivery_document_header_data`
     `District`                       varchar(6) DEFAULT NULL,  -- 新規追加
     `SalesOrganization`              varchar(4) DEFAULT NULL,
     `PurchaseOrganization`           varchar(4) DEFAULT NULL,  -- 新規追加
-    `SoldToParty`                    varchar(10) DEFAULT NULL,
-    `SupplyFromParty`                varchar(10) DEFAULT NULL, -- 名称変更
-    `DeliverToParty`                 varchar(10) DEFAULT NULL, -- 名称変更
+    `Customer`                       int(10) DEFAULT NULL,     -- 名称変更
+    `Supplier`                       int(10) DEFAULT NULL,     -- 名称変更
+    `DeliverToParty`                 int(10) DEFAULT NULL,     -- 名称変更
+    `DeliverFromParty`               int(10) DEFAULT NULL,     -- 名称変更
     `TransactionCurrency`            varchar(5) DEFAULT NULL,
     `OverallDelivConfStatus`         varchar(2) DEFAULT NULL,
     `OverallDelivReltdBillgStatus`   varchar(2) DEFAULT NULL,
