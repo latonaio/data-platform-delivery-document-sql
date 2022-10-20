@@ -14,10 +14,11 @@ data-platform-delivery-document-sql には、sqlの設定ファイルとして�
 * data-platform-delivery-document-sql-header-deliver-to-contact-data.sql（データ連携基盤 入出荷伝票 - ヘッダ出荷先/入荷先データ）
 * data-platform-delivery-document-sql-header-deliver-from-contact-data.sql（データ連携基盤 入出荷伝票 - ヘッダ出荷元/入荷元データ）
 * data-platform-delivery-document-sql-header-partner-data.sql（データ連携基盤 入出荷伝票 - ヘッダ取引先データ）
+* data-platform-delivery-document-sql-header-partner-contact-data.sql（データ連携基盤 入出荷伝票 - ヘッダ取引先コンタクトデータ）
 * data-platform-delivery-document-sql-header-pdf-data.sql（データ連携基盤 入出荷伝票 - ヘッダPDFデータ）
-* data-platform-delivery-document-sql-partner-address-data.sql（データ連携基盤 入出荷伝票 - 取引先住所データ）
 * data-platform-delivery-document-sql-item-data.sql（データ連携基盤 入出荷伝票 - 明細データ）
 * data-platform-delivery-document-sql-item-document-flow-data.sql（データ連携基盤 入出荷伝票 - 明細伝票フローデータ）
+* data-platform-delivery-document-sql-partner-address-data.sql（データ連携基盤 入出荷伝票 - 取引先住所データ）
 
 ## MySQLのセットアップ / Kubernetesの設定 / SQLテーブルの作成方法
 MySQLのセットアップ / Kubernetesの設定 / 具体的なSQLテーブルの作成方法、については、[mysql-kube](https://github.com/latonaio/mysql-kube)を参照ください。
