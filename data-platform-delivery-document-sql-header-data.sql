@@ -12,21 +12,24 @@ CREATE TABLE `data_platform_delivery_document_header_data`
     `IssuingLocationTimeZone`        varchar(3) DEFAULT NULL,  -- 新規追加
     `ReceivingLocationTimeZone`      varchar(3) DEFAULT NULL,  -- 新規追加
     `DocumentDate`                   varchar(80) DEFAULT NULL,
-    `PlannedGIOrGRDate`              varchar(80) DEFAULT NULL, -- 名称変更
-    `ActualGoodsMovementDate`        varchar(80) DEFAULT NULL,
-    `ActualGoodsMovementTime`        varchar(80) DEFAULT NULL,
+    `DeliveryDate`                   varchar(80) DEFAULT NULL,
+    `DeliveryTime`                   varchar(80) DEFAULT NULL,
+    `PlannedGoodsIssueDate`          varchar(80) DEFAULT NULL, -- 新規追加
+    `PlannedGoodsIssueTime`          varchar(80) DEFAULT NULL, -- 新規追加
+    `PlannedGoodsReceiptDate`        varchar(80) DEFAULT NULL, -- 新規追加
+    `PlannedGoodsReceiptTime`        varchar(80) DEFAULT NULL, -- 新規追加
+    `ActualGoodsIssueDate`           varchar(80) DEFAULT NULL, -- 新規追加
+    `ActualGoodsIssueTime`           varchar(80) DEFAULT NULL, -- 新規追加
+    `ActualGoodsReceiptDate`         varchar(80) DEFAULT NULL, -- 新規追加
+    `ActualGoodsReceiptTime`         varchar(80) DEFAULT NULL, -- 新規追加
     `BillingDocumentDate`            varchar(80) DEFAULT NULL,
     `CompleteDeliveryIsDefined`      tinyint(1) DEFAULT NULL,
     `ConfirmationTime`               varchar(80) DEFAULT NULL,
     `CreationDate`                   varchar(80) DEFAULT NULL,
     `CreationTime`                   varchar(80) DEFAULT NULL,
     `DeliveryBlockReason`            int(1) DEFAULT NULL,
-    `DeliveryDate`                   varchar(80) DEFAULT NULL,
     `DeliveryDocumentBySupplier`     varchar(35) DEFAULT NULL,
-    `DeliveryPriority`               varchar(2) DEFAULT NULL,
-    `DeliveryTime`                   varchar(80) DEFAULT NULL,
-    `GoodsIssueOrReceiptSlipNumber`  varchar(10) DEFAULT NULL,
-    `GoodsIssueOrReceiptTime`        varchar(80) DEFAULT NULL,  -- 名称変更
+    `GoodsIssueOrReceiptSlipNumber`  varchar(35) DEFAULT NULL,
     `HeaderBillgIncompletionStatus`  varchar(1) DEFAULT NULL,
     `HeaderBillingBlockReason`       tinyint(1) DEFAULT NULL,
     `HeaderGrossWeight`              varchar(13) DEFAULT NULL,
