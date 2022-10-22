@@ -5,10 +5,19 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `DeliveryDocumentItem`            int(6) NOT NULL,
     `DeliveryDocumentItemCategory`    varchar(4) DEFAULT NULL,
     `DeliveryDocumentItemText`        varchar(40) DEFAULT NULL,
-    `ActualDeliveredQtyInBaseUnit`    varchar(15) DEFAULT NULL,
-    `ActualDeliveryQuantity`          varchar(15) DEFAULT NULL,
+    `ActualGoodsIssueDate`            varchar(80) DEFAULT NULL,   -- 新規追加
+    `ActualGoodsIssueTime`            varchar(80) DEFAULT NULL,   -- 新規追加
+    `ActualGoodsReceiptDate`          varchar(80) DEFAULT NULL,   -- 新規追加
+    `ActualGoodsReceiptTime`          varchar(80) DEFAULT NULL,   -- 新規追加
+    `ActualGoodsIssueQtyInBaseUnit`   varchar(15) DEFAULT NULL,   -- 名称変更
+    `ActualGoodsIssueQuantity`        varchar(15) DEFAULT NULL,   -- 名称変更
+    `ActualGoodsReceiptQtyInBaseUnit` varchar(15) DEFAULT NULL,   -- 新規追加
+    `ActualGoodsReceiptQuantity`      varchar(15) DEFAULT NULL,   -- 新規追加
     `BaseUnit`                        varchar(3) DEFAULT NULL,
+    `ProductIsBatchManaged`           varchar(1) DEFAULT NULL,   -- 名称変更
     `Batch`                           varchar(10) DEFAULT NULL,
+    `BatchValidityStartDate`          varchar(80) DEFAULT NULL,  -- 新規追加
+    `BatchValidityEndDate`            varchar(80) DEFAULT NULL,  -- 新規追加
     `BusinessArea`                    varchar(4) DEFAULT NULL,
     `CreationDate`                    varchar(80) DEFAULT NULL,
     `CreationTime`                    varchar(80) DEFAULT NULL,
@@ -36,7 +45,6 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `LastChangeDate`                  varchar(80) DEFAULT NULL,
     `Product`                         varchar(40) DEFAULT NULL,  -- 名称変更
     `ProductByCustomer`               varchar(40) DEFAULT NULL,  -- 名称変更
-    `ProductIsBatchManaged`           varchar(1) DEFAULT NULL,   -- 名称変更
     `OrderID`                         int(10) DEFAULT NULL,      -- 名称変更
     `OrderItem`                       int(6) DEFAULT NULL,       -- 名称変更
     `OrderType`                       varchar(3) DEFAULT NULL,   -- 新規追加
@@ -51,8 +59,6 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `ProfitCenter`                    varchar(10) DEFAULT NULL,
     `ReferenceDocument`               int(10) DEFAULT NULL,      -- 新規追加
     `ReferenceDocumentItem`           int(6) DEFAULT NULL,       -- 新規追加
-    `BatchValidityStartDate`          varchar(80) DEFAULT NULL,  -- 新規追加
-    `BatchValidityEndDate`            varchar(80) DEFAULT NULL,  -- 新規追加
     `StockType`                       varchar(2) DEFAULT NULL,
     `TaxCode`                         varchar(2) DEFAULT NULL,   -- 新規追加
     `CountryOfOrigin`                 varchar(3) DEFAULT NULL,   -- 新規追加
