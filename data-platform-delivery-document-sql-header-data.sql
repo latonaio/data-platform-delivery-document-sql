@@ -1,21 +1,22 @@
-CREATE TABLE `data_platform_delivery_document_header_data`     -- 名称変更
+CREATE TABLE `data_platform_delivery_document_header_data`
 (
---  `BusinessPartner`                int(10) NOT NULL,         -- 新規追加
-    `DeliveryDocument`               int(16) NOT NULL,         -- 名称変更
-    `OrderID`                        int(16) DEFAULT NULL,     -- 名称変更
-    `OrderType`                      varchar(3) DEFAULT NULL,  -- 新規追加
-    `ContractType`                   varchar(4) DEFAULT NULL,  -- 新規追加
-    `OrderValidityStartDate`         date DEFAULT NULL,        -- 新規追加
-    `OrderValidityEndDate`           date DEFAULT NULL,        -- 新規追加
-    `InvoiceScheduleStartDate`       date DEFAULT NULL,        -- 新規追加
-    `InvoiceScheduleEndDate`         date DEFAULT NULL,        -- 新規追加
-    `IssuingLocationTimeZone`        varchar(3) DEFAULT NULL,  -- 新規追加
-    `ReceivingLocationTimeZone`      varchar(3) DEFAULT NULL,  -- 新規追加
+    `DeliveryDocument`               int(16) NOT NULL,
+    `OrderID`                        int(16) DEFAULT NULL,
+    `OrderType`                      varchar(3) DEFAULT NULL,
+    `Buyer`                          int(12) DEFAULT NULL,
+    `Seller`                         int(12) DEFAULT NULL,
+    `ContractType`                   varchar(4) DEFAULT NULL,
+    `OrderValidityStartDate`         date DEFAULT NULL,
+    `OrderValidityEndDate`           date DEFAULT NULL,
+    `InvoiceScheduleStartDate`       date DEFAULT NULL,
+    `InvoiceScheduleEndDate`         date DEFAULT NULL,
+    `IssuingLocationTimeZone`        varchar(3) DEFAULT NULL,
+    `ReceivingLocationTimeZone`      varchar(3) DEFAULT NULL,
     `DocumentDate`                   date DEFAULT NULL,
-    `PlannedGoodsIssueDate`          date DEFAULT NULL,        -- 新規追加
-    `PlannedGoodsIssueTime`          time DEFAULT NULL,        -- 新規追加
-    `PlannedGoodsReceiptDate`        date DEFAULT NULL,        -- 新規追加
-    `PlannedGoodsReceiptTime`        time DEFAULT NULL,        -- 新規追加
+    `PlannedGoodsIssueDate`          date DEFAULT NULL,
+    `PlannedGoodsIssueTime`          time DEFAULT NULL,
+    `PlannedGoodsReceiptDate`        date DEFAULT NULL,
+    `PlannedGoodsReceiptTime`        time DEFAULT NULL,
     `BillingDocumentDate`            date DEFAULT NULL,
     `CompleteDeliveryIsDefined`      tinyint(1) DEFAULT NULL,
     `OverallDeliveryStatus`          varchar(2) DEFAULT NULL,
@@ -29,24 +30,18 @@ CREATE TABLE `data_platform_delivery_document_header_data`     -- 名称変更
     `HeaderBillingBlockReason`       tinyint(1) DEFAULT NULL,
     `HeaderGrossWeight`              float(13) DEFAULT NULL,
     `HeaderNetWeight`                float(13) DEFAULT NULL,
-    `HeaderVolume`                   float(13) DEFAULT NULL,
-    `HeaderVolumeUnit`               varchar(3) DEFAULT NULL,
     `HeaderWeightUnit`               varchar(3) DEFAULT NULL,
-    `Incoterms`                      varchar(3) DEFAULT NULL,  -- 名称変更
-    `IsExportImportDelivery`         tinyint(1) DEFAULT NULL,  -- 名称変更
+    `Incoterms`                      varchar(3) DEFAULT NULL,
+    `IsExportImportDelivery`         tinyint(1) DEFAULT NULL,
     `LastChangeDate`                 date DEFAULT NULL,
-    `IssuingPlantBusinessPartner`    varchar(4) DEFAULT NULL,  -- 新規追加
-    `IssuingPlant`                   varchar(4) DEFAULT NULL,  -- 新規追加
-    `ReceivingPlantBusinessPartner`  varchar(4) DEFAULT NULL,  -- 新規追加
-    `ReceivingPlant`                 varchar(4) DEFAULT NULL,  -- 新規追加
---  `SalesOrganization`              varchar(4) DEFAULT NULL,
---  `PurchaseOrganization`           varchar(4) DEFAULT NULL,  -- 新規追加
---  `Customer`                       int(10) DEFAULT NULL,     -- 名称変更
---  `Supplier`                       int(10) DEFAULT NULL,     -- 名称変更
-    `DeliverToParty`                 int(12) DEFAULT NULL,     -- 名称変更
-    `DeliverFromParty`               int(12) DEFAULT NULL,     -- 名称変更
-    `DeliverToPartyLanguage`         varchar(2) DEFAULT NULL,  -- 新規追加
-    `DeliverFromPartyLanguage`       varchar(2) DEFAULT NULL,  -- 新規追加
+    `IssuingPlantBusinessPartner`    varchar(4) DEFAULT NULL,
+    `IssuingPlant`                   varchar(4) DEFAULT NULL,
+    `ReceivingPlantBusinessPartner`  varchar(4) DEFAULT NULL,
+    `ReceivingPlant`                 varchar(4) DEFAULT NULL,
+    `DeliverToParty`                 int(12) DEFAULT NULL,
+    `DeliverFromParty`               int(12) DEFAULT NULL,
+    `DeliverToPartyLanguage`         varchar(2) DEFAULT NULL,
+    `DeliverFromPartyLanguage`       varchar(2) DEFAULT NULL,
     `TransactionCurrency`            varchar(5) DEFAULT NULL,
     `OverallDelivReltdBillgStatus`   varchar(2) DEFAULT NULL,
     

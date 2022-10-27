@@ -14,6 +14,7 @@ data-platform-delivery-document-sql には、sqlの設定ファイルとして�
 * data-platform-delivery-document-sql-header-pdf-data.sql（データ連携基盤 入出荷伝票 - ヘッダPDFデータ）
 * data-platform-delivery-document-sql-header-partner-data.sql（データ連携基盤 入出荷伝票 - ヘッダ取引先データ）
 * data-platform-delivery-document-sql-header-partner-contact-data.sql（データ連携基盤 入出荷伝票 - ヘッダ取引先コンタクトデータ）
+* data-platform-delivery-document-sql-header-partner-plant-data.sql（データ連携基盤 入出荷伝票 - ヘッダ取引先プラントデータ）
 * data-platform-delivery-document-sql-item-data.sql（データ連携基盤 入出荷伝票 - 明細データ）
 * data-platform-delivery-document-sql-address-data.sql（データ連携基盤 入出荷伝票 - 住所データ）
 
