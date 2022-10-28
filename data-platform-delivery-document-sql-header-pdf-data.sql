@@ -1,12 +1,11 @@
-CREATE TABLE `data_platform_delivery_document_header_pdf_data`           -- 新規追加
+CREATE TABLE `data_platform_delivery_document_header_pdf_data`
 (
---`BusinessPartner`                int(10) NOT NULL,          -- 新規追加
-  `DeliveryDocument`               int(16) NOT NULL,          -- 新規追加
-  `DocType`                        varchar(20) NOT NULL,      -- 新規追加
-  `DocVersionID`                   int(4) NOT NULL,           -- 新規追加
-  `DocID`                          varchar(100) NOT NULL,     -- 新規追加
-  `DocIssuerBusinessPartner`       int(12) DEFAULT NULL,      -- 新規追加
-  `FileName`                       varchar(200) DEFAULT NULL, -- 新規追加
+  `DeliveryDocument`               int(16) NOT NULL,
+  `DocType`                        varchar(40) NOT NULL,
+  `DocVersionID`                   int(4) NOT NULL,
+  `DocID`                          varchar(100) NOT NULL,
+  `DocIssuerBusinessPartner`       int(12) DEFAULT NULL,
+  `FileName`                       varchar(200) DEFAULT NULL,
   
     PRIMARY KEY (`DeliveryDocument`, `DocType`, `DocVersionID`, `DocID`),
     

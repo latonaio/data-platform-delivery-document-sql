@@ -1,8 +1,6 @@
 CREATE TABLE `data_platform_delivery_document_header_data`
 (
     `DeliveryDocument`               int(16) NOT NULL,
-    `OrderID`                        int(16) DEFAULT NULL,
-    `OrderType`                      varchar(3) DEFAULT NULL,
     `Buyer`                          int(12) DEFAULT NULL,
     `Seller`                         int(12) DEFAULT NULL,
     `ContractType`                   varchar(4) DEFAULT NULL,
@@ -40,19 +38,20 @@ CREATE TABLE `data_platform_delivery_document_header_data`
     `ReceivingPlant`                 varchar(4) DEFAULT NULL,
     `DeliverToParty`                 int(12) DEFAULT NULL,
     `DeliverFromParty`               int(12) DEFAULT NULL,
-    `DeliverToPartyLanguage`         varchar(2) DEFAULT NULL,
-    `DeliverFromPartyLanguage`       varchar(2) DEFAULT NULL,
     `TransactionCurrency`            varchar(5) DEFAULT NULL,
     `OverallDelivReltdBillgStatus`   varchar(2) DEFAULT NULL,
     
     PRIMARY KEY (`DeliveryDocument`),
-    
-    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataOrderID_fk` FOREIGN KEY (`OrderID`, `OrderType`, `ContractType`, `OrderValidityStartDate`, `OrderValidityEndDate`, `InvoiceScheduleStartDate`, `InvoiceScheduleEndDate`, `TransactionCurrency`) REFERENCES `data_platform_orders_header_data` (`OrderID`, `OrderType`, `ContractType`, `ValidityStartDate`, `ValidityEndDate`, `InvoiceScheduleStartDate`, `InvoiceScheduleEndDate`, `TransactionCurrency`),
+
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataBuyer_fk` FOREIGN KEY (`Buyer`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataSeller_fk` FOREIGN KEY (`Seller`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataHeaderWeightUnit_fk` FOREIGN KEY (`HeaderWeightUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`HeaderWeightUnit`),    
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataIncoterms_fk` FOREIGN KEY (`Incoterms`) REFERENCES `data_platform_incoterms_incoterms_data` (`Incoterms`),
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataIssuingPlant_fk` FOREIGN KEY (`IssuingPlantBusinessPartner`, `IssuingPlant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`),
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataReceivingPlant_fk` FOREIGN KEY (`ReceivingPlantBusinessPartner`, `ReceivingPlant`) REFERENCES `data_platform_plant_general_data` (`BusinessPartner`, `Plant`),
-    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataDeliverToParty_fk` FOREIGN KEY (`DeliverToParty`, `DeliverFromParty`) REFERENCES `data_platform_orders_header_partner_data` (`BusinessPartner`, `BusinessPartner`),
-    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataDeliverToPartyLanguage_fk` FOREIGN KEY (`DeliverToPartyLanguage`, `DeliverFromPartyLanguage`) REFERENCES `data_platform_business_partner_general_data` (`Language`, `Language`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataDeliverToParty_fk` FOREIGN KEY (`DeliverToParty) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataDeliverFromParty_fk` FOREIGN KEY (`DeliverFromParty) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataTransactionCurrency_fk` FOREIGN KEY (`TransactionCurrency) REFERENCES `data_platform_currency_currency_data` (`Currency`),
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

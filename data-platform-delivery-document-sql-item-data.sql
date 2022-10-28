@@ -1,44 +1,55 @@
 CREATE TABLE `data_platform_delivery_document_item_data`
 (
---  `BusinessPartner`                         int(10) NOT NULL,             -- 新規追加
     `DeliveryDocument`                        int(16) NOT NULL,
     `DeliveryDocumentItem`                    int(6) NOT NULL,
     `DeliveryDocumentItemCategory`            varchar(4) DEFAULT NULL,
     `DeliveryDocumentItemText`                varchar(100) DEFAULT NULL,
-    `ActualGoodsIssueDate`                    date DEFAULT NULL,            -- 新規追加
-    `ActualGoodsIssueTime`                    time DEFAULT NULL,            -- 新規追加
-    `ActualGoodsReceiptDate`                  date DEFAULT NULL,            -- 新規追加
-    `ActualGoodsReceiptTime`                  time DEFAULT NULL,            -- 新規追加
-    `ActualGoodsIssueQtyInBaseUnit`           float(15) DEFAULT NULL,       -- 名称変更
-    `ActualGoodsIssueQuantity`                float(15) DEFAULT NULL,       -- 名称変更
-    `ActualGoodsReceiptQtyInBaseUnit`         float(15) DEFAULT NULL,       -- 新規追加
-    `ActualGoodsReceiptQuantity`              float(15) DEFAULT NULL,       -- 新規追加
-    `CompleteItemDeliveryIsDefined`           tinyint(1) DEFAULT NULL,      -- 新規追加
+    `Product`                                 varchar(40) DEFAULT NULL,
+    `ProductStandardID`                       varchar(18) DEFAULT NULL,
+    `ProductGroup`                            varchar(9) DEFAULT NULL,
     `BaseUnit`                                varchar(3) DEFAULT NULL,
-    `ProductionPlantBusinessPartner`          varchar(4) DEFAULT NULL,      -- 新規追加
-    `ProductionPlant`                         varchar(4) DEFAULT NULL,      -- 新規追加
-    `ProductionPlantStorageLocation`          varchar(4) DEFAULT NULL,      -- 新規追加
-    `IssuingPlantBusinessPartner`             varchar(4) DEFAULT NULL,      -- 新規追加
-    `IssuingPlant`                            varchar(4) DEFAULT NULL,      -- 新規追加
-    `IssuingPlantStorageLocation`             varchar(4) DEFAULT NULL,      -- 新規追加
-    `ReceivingPlantBusinessPartner`           varchar(4) DEFAULT NULL,      -- 新規追加
-    `ReceivingPlant`                          varchar(4) DEFAULT NULL,      -- 新規追加
-    `ReceivingPlantStorageLocation`           varchar(4) DEFAULT NULL,　    -- 新規追加
-    `ProductIsBatchManagedInProductionPlant`  tinyint(1) DEFAULT NULL,　    -- 新規追加
-    `ProductIsBatchManagedInIssuingPlant`     tinyint(1) DEFAULT NULL,　    -- 新規追加
-    `ProductIsBatchManagedInReceivingPlant`   tinyint(1) DEFAULT NULL,　    -- 新規追加
-    `BatchMgmtPolicyInProductionPlant`        varchar(4) DEFAULT NULL,　    -- 新規追加
-    `BatchMgmtPolicyInIssuingPlant`           varchar(4) DEFAULT NULL,　    -- 新規追加
-    `BatchMgmtPolicyInReceivingPlant`         varchar(4) DEFAULT NULL,　    -- 新規追加
-    `ProductionPlantBatch`                    varchar(10) DEFAULT NULL,　    -- 新規追加
-    `IssuingPlantBatch`                       varchar(10) DEFAULT NULL,　    -- 新規追加
-    `ReceivingPlantBatch`                     varchar(10) DEFAULT NULL,　    -- 新規追加
-    `ProductionPlantBatchValidityStartDate`   date DEFAULT NULL,　           -- 新規追加
-    `ProductionPlantBatchValidityEndDate`     date DEFAULT NULL,             -- 新規追加
-    `IssuingPlantBatchValidityStartDate`      date DEFAULT NULL,　           -- 新規追加
-    `IssuingPlantBatchValidityEndDate`        date DEFAULT NULL,　           -- 新規追加
-    `ReceivingPlantBatchValidityStartDate`    date DEFAULT NULL,　           -- 新規追加
-    `ReceivingPlantBatchValidityEndDate`      date DEFAULT NULL,　           -- 新規追加
+    `OriginalDeliveryQuantity`                float(13) DEFAULT NULL,
+    `ActualGoodsIssueDate`                    date DEFAULT NULL,
+    `ActualGoodsIssueTime`                    time DEFAULT NULL,
+    `ActualGoodsReceiptDate`                  date DEFAULT NULL,
+    `ActualGoodsReceiptTime`                  time DEFAULT NULL,
+    `ActualGoodsIssueQtyInBaseUnit`           float(15) DEFAULT NULL,
+    `ActualGoodsIssueQuantity`                float(15) DEFAULT NULL,
+    `ActualGoodsReceiptQtyInBaseUnit`         float(15) DEFAULT NULL,
+    `ActualGoodsReceiptQuantity`              float(15) DEFAULT NULL,
+    `CompleteItemDeliveryIsDefined`           tinyint(1) DEFAULT NULL,
+    `StockConfirmationPartnerFunction`        varchar(40) DEFAULT NULL,
+    `StockConfirmationBusinessPartner`        int(12) DEFAULT NULL,
+    `StockConfirmationPlant`                  varchar(4) DEFAULT NULL,
+    `StockConfirmationPolicy`                 varchar(4) DEFAULT NULL,
+    `StockConfirmationStatus`                 varchar(2) DEFAULT NULL,
+    `ProductionPlantPartnerFunction`          varchar(40) DEFAULT NULL,
+    `ProductionPlantBusinessPartner`          varchar(4) DEFAULT NULL,
+    `ProductionPlant`                         varchar(4) DEFAULT NULL,
+    `ProductionPlantStorageLocation`          varchar(4) DEFAULT NULL,
+    `IssuingPlantPartnerFunction`             varchar(40) DEFAULT NULL,
+    `IssuingPlantBusinessPartner`             varchar(4) DEFAULT NULL,
+    `IssuingPlant`                            varchar(4) DEFAULT NULL,
+    `IssuingPlantStorageLocation`             varchar(4) DEFAULT NULL,
+    `ReceivingPlantPartnerFunction`           varchar(40) DEFAULT NULL,
+    `ReceivingPlantBusinessPartner`           varchar(4) DEFAULT NULL,
+    `ReceivingPlant`                          varchar(4) DEFAULT NULL,
+    `ReceivingPlantStorageLocation`           varchar(4) DEFAULT NULL,
+    `ProductIsBatchManagedInProductionPlant`  tinyint(1) DEFAULT NULL,
+    `ProductIsBatchManagedInIssuingPlant`     tinyint(1) DEFAULT NULL,
+    `ProductIsBatchManagedInReceivingPlant`   tinyint(1) DEFAULT NULL,
+    `BatchMgmtPolicyInProductionPlant`        varchar(4) DEFAULT NULL,
+    `BatchMgmtPolicyInIssuingPlant`           varchar(4) DEFAULT NULL,
+    `BatchMgmtPolicyInReceivingPlant`         varchar(4) DEFAULT NULL,
+    `ProductionPlantBatch`                    varchar(10) DEFAULT NULL,
+    `IssuingPlantBatch`                       varchar(10) DEFAULT NULL,
+    `ReceivingPlantBatch`                     varchar(10) DEFAULT NULL,
+    `ProductionPlantBatchValidityStartDate`   date DEFAULT NULL,
+    `ProductionPlantBatchValidityEndDate`     date DEFAULT NULL,
+    `IssuingPlantBatchValidityStartDate`      date DEFAULT NULL,
+    `IssuingPlantBatchValidityEndDate`        date DEFAULT NULL,
+    `ReceivingPlantBatchValidityStartDate`    date DEFAULT NULL,
+    `ReceivingPlantBatchValidityEndDate`      date DEFAULT NULL,
     `CreationDate`                            date DEFAULT NULL,
     `CreationTime`                            time DEFAULT NULL,
     `DeliveryQuantityUnit`                    varchar(3) DEFAULT NULL,
@@ -49,59 +60,55 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `ReceivingGLAccount`                      varchar(10) DEFAULT NULL,
     `IssuingGoodsMovementType`                varchar(3) DEFAULT NULL,
     `ReceivingGoodsMovementType`              varchar(3) DEFAULT NULL,
-    `ProductStandardID`                       varchar(18) DEFAULT NULL,
     `ItemBillingBlockReason`                  tinyint(1) DEFAULT NULL,
-    `ItemBillingIncompletionStatus`           varchar(2) DEFAULT NULL,       -- 新規追加
+    `ItemBillingIncompletionStatus`           varchar(2) DEFAULT NULL,
     `ItemDeliveryIncompletionStatus`          varchar(2) DEFAULT NULL,
     `ItemGrossWeight`                         float(13) DEFAULT NULL,
     `ItemNetWeight`                           float(13) DEFAULT NULL,
     `ItemWeightUnit`                          varchar(3) DEFAULT NULL,
-    `ItemVolume`                              float(15) DEFAULT NULL,
-    `ItemVolumeUnit`                          varchar(3) DEFAULT NULL,
     `ItemIsBillingRelevant`                   int(1) DEFAULT NULL,
     `LastChangeDate`                          date DEFAULT NULL,
-    `Product`                                 varchar(40) DEFAULT NULL,      -- 名称変更
---  `ProductByCustomer`                       varchar(40) DEFAULT NULL,      -- 名称変更
-    `OrderID`                                 int(16) DEFAULT NULL,          -- 名称変更
-    `OrderItem`                               int(6) DEFAULT NULL,           -- 名称変更
---  `OrderType`                               varchar(3) DEFAULT NULL,       -- 新規追加
-    `ContractType`                            varchar(4) DEFAULT NULL,       -- 新規追加
-    `OrderValidityStartDate`                  date DEFAULT NULL,             -- 新規追加
-    `OrderValidityEndDate`                    date DEFAULT NULL,             -- 新規追加
-    `InvoiceScheduleStartDate`                date DEFAULT NULL,             -- 新規追加
-    `InvoiceScheduleEndDate`                  date DEFAULT NULL,             -- 新規追加
-    `OriginalDeliveryQuantity`                float(13) DEFAULT NULL,
+--  `ProductByCustomer`                       varchar(40) DEFAULT NULL,
+    `OrderID`                                 int(16) DEFAULT NULL,
+    `OrderItem`                               int(6) DEFAULT NULL,
+    `OrderType`                               varchar(3) DEFAULT NULL,
+    `ContractType`                            varchar(4) DEFAULT NULL,
+    `OrderValidityStartDate`                  date DEFAULT NULL,
+    `OrderValidityEndDate`                    date DEFAULT NULL,
+    `InvoiceScheduleStartDate`                date DEFAULT NULL,
+    `InvoiceScheduleEndDate`                  date DEFAULT NULL,
     `ProductAvailabilityDate`                 date DEFAULT NULL,
-    `Project`                                 varchar(24) DEFAULT NULL,      -- 新規追加
+    `Project`                                 varchar(24) DEFAULT NULL,
 --  `ProfitCenter`                            varchar(10) DEFAULT NULL,
-    `ReferenceDocument`                       int(16) DEFAULT NULL,          -- 新規追加
-    `ReferenceDocumentItem`                   int(6) DEFAULT NULL,           -- 新規追加
-    `TaxCode`                                 varchar(2) DEFAULT NULL,       -- 新規追加
-    `TaxRate`                                 varchar(6) DEFAULT NULL,       -- 新規追加
-    `CountryOfOrigin`                         varchar(3) DEFAULT NULL,       -- 新規追加
+    `ReferenceDocument`                       int(16) DEFAULT NULL,
+    `ReferenceDocumentItem`                   int(6) DEFAULT NULL,
+    `BPTaxClassification`                     varchar(1) NOT NULL,
+    `ProductTaxClassification`                varchar(1) NOT NULL,
+    `BPAccountAssignmentGroup`                varchar(2) NOT NULL,
+    `ProductAccountAssignmentGroup`           varchar(2) NOT NULL,
+    `TaxCode`                                 varchar(2) DEFAULT NULL,
+    `TaxRate`                                 float(6) DEFAULT NULL,
+    `CountryOfOrigin`                         varchar(3) DEFAULT NULL,
     
     PRIMARY KEY (`DeliveryDocument`, `DeliveryDocumentItem`),
     
     CONSTRAINT `DataPlatformDeliveryDocumentItemData_fk` FOREIGN KEY (`DeliveryDocument`) REFERENCES `data_platform_delivery_document_header_data` (`DeliveryDocument`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataDeliveryDocumentItemCategory_fk` FOREIGN KEY (`DeliveryDocumentItemCategory`, `DeliveryDocumentItemText`) REFERENCES `data_platform_orders_item_data` (`OrderItemCategory`, `OrderItemText`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataActualGoodsIssueQtyInBaseUnit_fk` FOREIGN KEY (`ActualGoodsIssueQtyInBaseUnit`, `ActualGoodsIssueQuantity`) REFERENCES `data_platform_orders_item_data` (`OrderQuantity`, `OrderQuantity`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataActualGoodsReceiptQtyInBaseUnit_fk` FOREIGN KEY (`ActualGoodsReceiptQtyInBaseUnit`, `ActualGoodsReceiptQuantity`) REFERENCES `data_platform_orders_item_data` (`OrderQuantity`, `OrderQuantity`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataBaseUnit_fk` FOREIGN KEY (`BaseUnit`) REFERENCES `data_platform_orders_item_data` (`OrderQuantityUnit`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataIssuingPlant_fk` FOREIGN KEY (`IssuingPlant`, `ReceivingPlant`) REFERENCES `data_platform_delivery_document_header_data` (`IssuingPlant`, `ReceivingPlant`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductionPlantStorageLocation_fk` FOREIGN KEY (`ProductionPlantStorageLocation`, `IssuingPlantStorageLocation`, `ReceivingPlantStorageLocation`) REFERENCES `data_platform_orders_item_data` (`ProductionPlantStorageLocation`, `IssuingPlantStorageLocation`, `ReceivingPlantStorageLocation`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductIsBatchManagedInProductionPlant_fk` FOREIGN KEY (`ProductIsBatchManagedInProductionPlant`, `ProductIsBatchManagedInIssuingPlant`, `ProductIsBatchManagedInReceivingPlant`, `BatchMgmtPolicyInProductionPlant`, `BatchMgmtPolicyInIssuingPlant`, `BatchMgmtPolicyInReceivingPlant`) REFERENCES `data_platform_product_master_bp_plant_data` (`IsBatchManagementRequired`, `IsBatchManagementRequired`, `IsBatchManagementRequired`, `BatchManagementPolicy`, `BatchManagementPolicy`, `BatchManagementPolicy`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataDeliveryQuantityUnit_fk` FOREIGN KEY (`DeliveryQuantityUnit`) REFERENCES `data_platform_orders_item_data` (`OrderQuantityUnit`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductStandardID_fk` FOREIGN KEY (`ProductStandardID`) REFERENCES `data_platform_orders_item_data` (`ProductStandardID`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataItemGrossWeight_fk` FOREIGN KEY (`ItemGrossWeight`, `ItemNetWeight`, `ItemWeightUnit`, `ItemVolume`, `ItemVolumeUnit`) REFERENCES `data_platform_orders_item_data` (`ItemGrossWeight`, `ItemNetWeight`, `ItemWeightUnit`, `ItemVolume`, `ItemVolumeUnit`),
+
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataBaseUnit_fk` FOREIGN KEY (`BaseUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit` (`QuantityUnit`),
+
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataStockConfirmationPlant_fk` FOREIGN KEY (`StockConfirmationPartnerFunction`, `StockConfirmationBusinessPartner`, `StockConfirmationPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductionPlant_fk` FOREIGN KEY (`ProductionPlantPartnerFunction`, `ProductionPlantBusinessPartner`, `ProductionPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataIssuingPlant_fk` FOREIGN KEY (`IssuingPlantPartnerFunction`, `IssuingPlantBusinessPartner`, `IssuingPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataReceivingPlant_fk` FOREIGN KEY (`ReceivingPlantPartnerFunction`, `ReceivingPlantBusinessPartner`, `ReceivingPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
+
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductionPlantStorageLocation_fk` FOREIGN KEY (`ProductionPlantBusinessPartner`, `ProductionPlant`, `ProductionPlantStorageLocation`) REFERENCES `data_platform_plant_storage_location_data` (`BusinessPartner`, `Plant`, `StorageLocation`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataIssuingPlantStorageLocation_fk` FOREIGN KEY (`IssuingPlantBusinessPartner`, `IssuingPlant`, `IssuingPlantStorageLocation`) REFERENCES `data_platform_plant_storage_location_data` (`BusinessPartner`, `Plant`, `StorageLocation`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataReceivingPlantStorageLocation_fk` FOREIGN KEY (`ReceivingPlantBusinessPartner`, `ReceivingPlant`, `ReceivingPlantStorageLocation`) REFERENCES `data_platform_plant_storage_location_data` (`BusinessPartner`, `Plant`, `StorageLocation`),
+
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataDeliveryQuantityUnit_fk` FOREIGN KEY (`DeliveryQuantityUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),
     CONSTRAINT `DataPlatformDeliveryDocumentItemDataProduct_fk` FOREIGN KEY (`Product`) REFERENCES `data_platform_product_master_general_data` (`Product`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataOrderID_fk` FOREIGN KEY (`OrderID`) REFERENCES `data_platform_delivery_document_header_data` (`OrderID`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataOrderItem_fk` FOREIGN KEY (`OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderItem`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataContractType_fk` FOREIGN KEY (`ContractType`) REFERENCES `data_platform_delivery_document_header_data` (`ContractType`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataOrderVaridityStartDate_fk` FOREIGN KEY (`OrderVaridityStartDate`, `OrderValidityEndDate`) REFERENCES `data_platform_delivery_document_header_data` (`OrderVaridityStartDate`, `OrderValidityEndDate`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataInvoiceScheduleStartDate_fk` FOREIGN KEY (`InvoiceScheduleStartDate`, `InvoiceScheduleEndDate`) REFERENCES `data_platform_delivery_document_header_data` (`InvoiceScheduleStartDate`, `InvoiceScheduleEndDate`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProject_fk` FOREIGN KEY (`Project`) REFERENCES `data_platform_orders_header_data` (`Project`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataTaxCode_fk` FOREIGN KEY (`TaxCode`, `TaxRate`) REFERENCES `data_platform_orders_item_data` (`TaxCode`, `TaxRate`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataCountryOfOrigin_fk` FOREIGN KEY (`CountryOfOrigin`) REFERENCES `data_platform_orders_item_data` (`CountryOfOrigin`)
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataOrderItem_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataCountryOfOrigin_fk` FOREIGN KEY (`CountryOfOrigin`) REFERENCES `data_platform_country_country_data` (`Country`)
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
