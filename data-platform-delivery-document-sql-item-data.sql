@@ -3,7 +3,7 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `DeliveryDocument`                        int(16) NOT NULL,
     `DeliveryDocumentItem`                    int(6) NOT NULL,
     `DeliveryDocumentItemCategory`            varchar(4) DEFAULT NULL,
-    `DeliveryDocumentItemText`                varchar(100) DEFAULT NULL,
+    `DeliveryDocumentItemText`                varchar(200) DEFAULT NULL,
     `Product`                                 varchar(40) DEFAULT NULL,
     `ProductStandardID`                       varchar(18) DEFAULT NULL,
     `ProductGroup`                            varchar(9) DEFAULT NULL,
