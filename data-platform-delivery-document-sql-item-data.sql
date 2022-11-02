@@ -62,6 +62,7 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `IssuingGoodsMovementType`                varchar(3) DEFAULT NULL,
     `ReceivingGoodsMovementType`              varchar(3) DEFAULT NULL,
     `ItemBillingBlockReason`                  tinyint(1) DEFAULT NULL,
+    `ItemCompleteDeliveryIsDefined`           tinyint(1) DEFAULT NULL,
     `ItemDeliveryIncompletionStatus`          varchar(2) DEFAULT NULL,
     `ItemGrossWeight`                         float(13) DEFAULT NULL,
     `ItemNetWeight`                           float(13) DEFAULT NULL,
@@ -96,10 +97,10 @@ CREATE TABLE `data_platform_delivery_document_item_data`
 
     CONSTRAINT `DataPlatformDeliveryDocumentItemDataBaseUnit_fk` FOREIGN KEY (`BaseUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit` (`QuantityUnit`),
 
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataStockConfirmationPlant_fk` FOREIGN KEY (`StockConfirmationPartnerFunction`, `StockConfirmationBusinessPartner`, `StockConfirmationPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductionPlant_fk` FOREIGN KEY (`ProductionPlantPartnerFunction`, `ProductionPlantBusinessPartner`, `ProductionPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataIssuingPlant_fk` FOREIGN KEY (`IssuingPlantPartnerFunction`, `IssuingPlantBusinessPartner`, `IssuingPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
-    CONSTRAINT `DataPlatformDeliveryDocumentItemDataReceivingPlant_fk` FOREIGN KEY (`ReceivingPlantPartnerFunction`, `ReceivingPlantBusinessPartner`, `ReceivingPlant`) REFERENCES `data_platform_header_partner_plant_data` (`PartnerFunction`, `BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataStockConfirmationPlant_fk` FOREIGN KEY (`DeliveryDocument`, `DeliveryDocumentItem`, `StockConfirmationPartnerFunction`, `StockConfirmationBusinessPartner`, `StockConfirmationPlant`) REFERENCES `data_platform_item_partner_plant_data` (`DeliveryDocument`, `DeliveryDocumentItem`, `PartnerFunction`, `BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductionPlant_fk` FOREIGN KEY (`DeliveryDocument`, `DeliveryDocumentItem`, `ProductionPlantPartnerFunction`, `ProductionPlantBusinessPartner`, `ProductionPlant`) REFERENCES `data_platform_item_partner_plant_data` (`DeliveryDocument`, `DeliveryDocumentItem`, `PartnerFunction`, `BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataIssuingPlant_fk` FOREIGN KEY (`DeliveryDocument`, `DeliveryDocumentItem`, `IssuingPlantPartnerFunction`, `IssuingPlantBusinessPartner`, `IssuingPlant`) REFERENCES `data_platform_item_partner_plant_data` (`DeliveryDocument`, `DeliveryDocumentItem`, `PartnerFunction`, `BusinessPartner`, `Plant`),
+    CONSTRAINT `DataPlatformDeliveryDocumentItemDataReceivingPlant_fk` FOREIGN KEY (`DeliveryDocument`, `DeliveryDocumentItem`, `ReceivingPlantPartnerFunction`, `ReceivingPlantBusinessPartner`, `ReceivingPlant`) REFERENCES `data_platform_item_partner_plant_data` (`DeliveryDocument`, `DeliveryDocumentItem`, `PartnerFunction`, `BusinessPartner`, `Plant`),
 
     CONSTRAINT `DataPlatformDeliveryDocumentItemDataProductionPlantStorageLocation_fk` FOREIGN KEY (`ProductionPlantBusinessPartner`, `ProductionPlant`, `ProductionPlantStorageLocation`) REFERENCES `data_platform_plant_storage_location_data` (`BusinessPartner`, `Plant`, `StorageLocation`),
     CONSTRAINT `DataPlatformDeliveryDocumentItemDataIssuingPlantStorageLocation_fk` FOREIGN KEY (`IssuingPlantBusinessPartner`, `IssuingPlant`, `IssuingPlantStorageLocation`) REFERENCES `data_platform_plant_storage_location_data` (`BusinessPartner`, `Plant`, `StorageLocation`),
