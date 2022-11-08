@@ -69,7 +69,6 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `ItemWeightUnit`                          varchar(3) DEFAULT NULL,
     `ItemIsBillingRelevant`                   tinyint(1) DEFAULT NULL,
     `LastChangeDate`                          date DEFAULT NULL,
---  `ProductByCustomer`                       varchar(40) DEFAULT NULL,
     `OrderID`                                 int(16) DEFAULT NULL,
     `OrderItem`                               int(6) DEFAULT NULL,
     `OrderType`                               varchar(3) DEFAULT NULL,
