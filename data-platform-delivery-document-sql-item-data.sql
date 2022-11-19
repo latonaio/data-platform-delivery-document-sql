@@ -79,7 +79,7 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `PaymentMethod`                           varchar(1) DEFAULT NULL,
     `InvoiceScheduleStartDate`                date DEFAULT NULL,
     `InvoiceScheduleEndDate`                  date DEFAULT NULL,
-    `ProductAvailabilityDate`                 date DEFAULT NULL,
+    `ConfirmedDeliveryDate`                   date DEFAULT NULL,
     `Project`                                 varchar(24) DEFAULT NULL,
 --  `ProfitCenter`                            varchar(10) DEFAULT NULL,
     `ReferenceDocument`                       int(16) DEFAULT NULL,
@@ -91,6 +91,7 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `TaxCode`                                 varchar(2) DEFAULT NULL,
     `TaxRate`                                 float(6) DEFAULT NULL,
     `CountryOfOrigin`                         varchar(3) DEFAULT NULL,
+　　　　　　 `StockIsFullyConfirmed`                   tinyint(1) DEFAULT NULL,
     
     PRIMARY KEY (`DeliveryDocument`, `DeliveryDocumentItem`),
     
