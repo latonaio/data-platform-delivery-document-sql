@@ -34,6 +34,8 @@ CREATE TABLE `data_platform_delivery_document_header_data`
     `HeaderNetWeight`                    float(15) DEFAULT NULL,
     `HeaderWeightUnit`                   varchar(3) DEFAULT NULL,
     `Incoterms`                          varchar(3) DEFAULT NULL,
+    `BillToCountry`                      varchar(3) DEFAULT NULL,
+    `BillFromCountry`                    varchar(3) DEFAULT NULL,
     `IsExportImportDelivery`             tinyint(1) DEFAULT NULL,
     `LastChangeDate`                     date DEFAULT NULL,
     `IssuingPlantBusinessPartner`        int(4) DEFAULT NULL,
