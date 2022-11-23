@@ -8,7 +8,7 @@ CREATE TABLE `data_platform_delivery_document_address_data`
     `District`                varchar(6) DEFAULT NULL,
     `StreetName`              varchar(200) DEFAULT NULL,
     `CityName`                varchar(200) DEFAULT NULL,
-    `Builiding`               varchar(100) DEFAULT NULL,
+    `Building`                varchar(100) DEFAULT NULL,
     `Floor`                   int(4) DEFAULT NULL,
     `Room`                    int(8) DEFAULT NULL,
     
