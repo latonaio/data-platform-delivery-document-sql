@@ -61,7 +61,10 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `ReceivingGLAccount`                      varchar(10) DEFAULT NULL,
     `IssuingGoodsMovementType`                varchar(3) DEFAULT NULL,
     `ReceivingGoodsMovementType`              varchar(3) DEFAULT NULL,
-    `ItemBillingBlockReason`                  tinyint(1) DEFAULT NULL,
+    `ItemDeliveryBlockStatus`                 tinyint(1) DEFAULT NULL,
+    `ItemIssuingBlockStatus`                  tinyint(1) DEFAULT NULL,
+    `ItemReceivingBlockStatus`                tinyint(1) DEFAULT NULL,
+    `ItemBillingBlockStatus`                  tinyint(1) DEFAULT NULL,
     `ItemCompleteDeliveryIsDefined`           tinyint(1) DEFAULT NULL,
     `ItemDeliveryIncompletionStatus`          varchar(2) DEFAULT NULL,
     `ItemGrossWeight`                         float(13) DEFAULT NULL,
@@ -91,7 +94,7 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `TaxCode`                                 varchar(2) DEFAULT NULL,
     `TaxRate`                                 float(6) DEFAULT NULL,
     `CountryOfOrigin`                         varchar(3) DEFAULT NULL,
-　　　　　　 `StockIsFullyConfirmed`                   tinyint(1) DEFAULT NULL,
+    `StockIsFullyConfirmed`                   tinyint(1) DEFAULT NULL,
     
     PRIMARY KEY (`DeliveryDocument`, `DeliveryDocumentItem`),
     
