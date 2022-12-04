@@ -4,6 +4,8 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `DeliveryDocumentItem`                    int(6) NOT NULL,
     `DeliveryDocumentItemCategory`            varchar(4) DEFAULT NULL,
     `DeliveryDocumentItemText`                varchar(200) DEFAULT NULL,
+    `DeliveryDocumentItemTextByBuyer`         varchar(200) NOT NULL,
+    `DeliveryDocumentItemTextBySeller`        varchar(200) NOT NULL,
     `Product`                                 varchar(40) DEFAULT NULL,
     `ProductStandardID`                       varchar(18) DEFAULT NULL,
     `ProductGroup`                            varchar(9) DEFAULT NULL,
