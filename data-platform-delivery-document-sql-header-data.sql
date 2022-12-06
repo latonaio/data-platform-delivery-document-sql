@@ -50,7 +50,6 @@ CREATE TABLE `data_platform_delivery_document_header_data`
     `DeliverFromParty`                   int(12) DEFAULT NULL,
     `DeliverToParty`                     int(12) DEFAULT NULL,
     `TransactionCurrency`                varchar(5) DEFAULT NULL,
-    `HeaderBillingStatus`                varchar(2) DEFAULT NULL,
     `StockIsFullyConfirmed`              tinyint(1) DEFAULT NULL,
     
     PRIMARY KEY (`DeliveryDocument`),
