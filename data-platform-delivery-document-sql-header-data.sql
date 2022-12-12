@@ -10,8 +10,6 @@ CREATE TABLE `data_platform_delivery_document_header_data`
     `ContractType`                       varchar(4) DEFAULT NULL,
     `OrderValidityStartDate`             date DEFAULT NULL,
     `OrderValidityEndDate`               date DEFAULT NULL,
-    `InvoiceScheduleStartDate`           date DEFAULT NULL,
-    `InvoiceScheduleEndDate`             date DEFAULT NULL,
     `IssuingLocationTimeZone`            varchar(3) DEFAULT NULL,
     `ReceivingLocationTimeZone`          varchar(3) DEFAULT NULL,
     `DocumentDate`                       date DEFAULT NULL,
