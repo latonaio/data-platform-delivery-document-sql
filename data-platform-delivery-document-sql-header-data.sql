@@ -17,7 +17,7 @@ CREATE TABLE `data_platform_delivery_document_header_data`
     `PlannedGoodsIssueTime`              time DEFAULT NULL,
     `PlannedGoodsReceiptDate`            date DEFAULT NULL,
     `PlannedGoodsReceiptTime`            time DEFAULT NULL,
-    `BillingDocumentDate`                date DEFAULT NULL,
+    `InvoiceDocumentDate`                date DEFAULT NULL,
     `HeaderCompleteDeliveryIsDefined`    tinyint(1) DEFAULT NULL,
     `HeaderDeliveryStatus`               varchar(2) DEFAULT NULL,
     `CreationDate`                       date DEFAULT NULL,
