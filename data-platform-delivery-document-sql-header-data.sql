@@ -54,6 +54,9 @@ CREATE TABLE `data_platform_delivery_document_header_data`
 
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataBuyer_fk` FOREIGN KEY (`Buyer`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataSeller_fk` FOREIGN KEY (`Seller`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataOrderItem_fk` FOREIGN KEY (`OrderID`, `OrderItem`) REFERENCES `data_platform_orders_item_data` (`OrderID`, `OrderItem`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataIssuingLocationTimeZone_fk` FOREIGN KEY (`IssuingLocationTimeZone`) REFERENCES `data_platform_time_zone_time_zone_data` (`TimeZone`),
+    CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataReceivingLocationTimeZone_fk` FOREIGN KEY (`ReceivingLocationTimeZone`) REFERENCES `data_platform_time_zone_time_zone_data` (`TimeZone`),
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataHeaderWeightUnit_fk` FOREIGN KEY (`HeaderWeightUnit`) REFERENCES `data_platform_quantity_unit_quantity_unit_data` (`QuantityUnit`),    
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderDataIncoterms_fk` FOREIGN KEY (`Incoterms`) REFERENCES `data_platform_incoterms_incoterms_data` (`Incoterms`),
     CONSTRAINT `DataPlatformDeliveryDocumentHeaderBillFromParty_fk` FOREIGN KEY (`BillFromParty`) REFERENCES `data_platform_business_partner_general_data` (`BusinessPartner`),
