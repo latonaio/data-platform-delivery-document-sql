@@ -9,6 +9,8 @@ CREATE TABLE `data_platform_delivery_document_item_data`
     `Product`                                         varchar(40) DEFAULT NULL,
     `ProductStandardID`                               varchar(18) DEFAULT NULL,
     `ProductGroup`                                    varchar(9) DEFAULT NULL,
+	`ProductSpecification`		 	                  varchar(200) DEFAULT NULL,
+    `MarkingOfMaterial`                               varchar(100) DEFAULT NULL,
     `BaseUnit`                                        varchar(3) DEFAULT NULL,
     `OriginalQuantityInBaseUnit`                      float(15) DEFAULT NULL,
     `DeliveryUnit`                                    varchar(3) DEFAULT NULL,
